@@ -192,17 +192,21 @@
     Iconpicker.prototype.updateArrows = function (page) {
         var op = this.options;
         var total_pages = this.totalPages();
-        if (page === 1) { 
+        if (page === 1) {
             op.table.find('.btn-previous').addClass('disabled');
+            op.table.find('.btn-previous').prop('disabled', true); // Add this
         }
         else {
             op.table.find('.btn-previous').removeClass('disabled');
+            op.table.find('.btn-previous').prop('disabled', false); // And this
         }
-        if (page === total_pages || total_pages === 0) { 
+        if (page === total_pages || total_pages === 0) {
             op.table.find('.btn-next').addClass('disabled');
+            op.table.find('.btn-next').prop('disabled', true); // And this
         }
         else {
             op.table.find('.btn-next').removeClass('disabled');
+            op.table.find('.btn-next').prop('disabled', false); // And this
         }
     };
     
